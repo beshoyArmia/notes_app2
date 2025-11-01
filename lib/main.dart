@@ -9,13 +9,6 @@ class Note_app extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Test App')),
-        body: const Center(child: Text('Hello,fhfsf!')),
-      ),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold());
   }
 }
