@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -6,23 +7,52 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.grey[800],
-        borderRadius: BorderRadius.circular(8),
+        color: const Color(0XFFFFCC80),
+        borderRadius: BorderRadius.circular(16),
       ),
-      child: ListTile(
-        title: const Text(
-          'Sample Note Title',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        subtitle: const Text(
-          'This is a sample note description to illustrate the note item layout.',
-          style: TextStyle(fontSize: 16),
-        ),
-        trailing: const Icon(Icons.delete_forever_sharp, size: 24),
+      child: Column(
+        children: [
+          ListTile(
+            title: const Text(
+              'Flutter tips',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              child: Text(
+                'build your career dfagegwith Flutter',
+                style: TextStyle(fontSize: 20, color: Colors.black54),
+              ),
+            ),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                FontAwesomeIcons.trash,
+                color: Colors.black,
+                size: 20,
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Text(
+                  "Mar 20, 2024",
+                  style: TextStyle(fontSize: 14, color: Colors.black54),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
